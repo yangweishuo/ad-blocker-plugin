@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      width: 320px;
+      min-height: 400px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #212529;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 15px;
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #2e7d32, #4CAF50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .status {
+      margin: 15px 0;
+      padding: 12px;
+      border-radius: 12px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 2px solid #c8e6c9;
+    }
+
+    .status.active {
+      background: #e8f5e9;
+      border-color: #4CAF50;
+    }
+
+    .status.inactive {
+      background: #ffebee;
+      border-color: #ef5350;
+      color: #c62828;
+    }
+
+    .stats {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+    }
+
+    .stat-item {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .stat-label {
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: #2e7d32;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #6c757d;
+      text-align: center;
+    }
+
+    /* 添加动画效果 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container > * {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .container > *:nth-child(2) { animation-delay: 0.1s; }
+    .container > *:nth-child(3) { animation-delay: 0.2s; }
+    .container > *:nth-child(4) { animation-delay: 0.3s; }
+    .container > *:nth-child(5) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <svg viewBox="0 0 24 24">
+        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,3.18L19,6.3V11.22C19,12.92 18.5,14.65 17.65,16.17C16,14.94 13.26,14.5 12,14.5C10.74,14.5 8,14.94 6.35,16.17C5.5,14.65 5,12.92 5,11.22V6.3L12,3.18M12,6A3.5,3.5 0 0,0 8.5,9.5A3.5,3.5 0 0,0 12,13A3.5,3.5 0 0,0 15.5,9.5A3.5,3.5 0 0,0 12,6M12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8Z"/>
+      </svg>
+    </div>
+    <h2>AdBlocker Pro</h2>
+    <div class="status active">
+      广告拦截器正在运行中
+    </div>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">已拦截广告</span>
+        <span class="stat-value" id="blocked-count">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">已节省加载时间</span>
+        <span class="stat-value"><span id="time-saved">0</span> 秒</span>
+      </div>
+    </div>
+    <button id="toggleButton">暂停拦截</button>
+    <div class="footer">
+      保护您的浏览体验 © 2024
+    </div>
+  </div>
+
+  <script>
+    // 获取DOM元素
+    const toggleButton = document.getElementById('toggleButton');
+    const status = document.querySelector('.status');
+    const blockedCountElement = document.getElementById('blocked-count');
+    const timeSavedElement = document.getElementById('time-saved');
+    let isActive = true;
+
+    // 更新UI状态
+    function updateUI() {
+      console.log('Updating UI, isActive:', isActive);
+      
+      if (isActive) {
+        status.classList.remove('inactive');
+        status.classList.add('active');
+        status.textContent = '广告拦截器正在运行中';
+        toggleButton.textContent = '暂停拦截';
+        toggleButton.style.background = 'linear-gradient(45deg, #ef5350, #e53935)';
+      } else {
+        status.classList.remove('active');
+        status.classList.add('inactive');
+        status.textContent = '广告拦截器已暂停';
+        toggleButton.textContent = '启动拦截';
+        toggleButton.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
+      }
+    }
+
+    // 更新统计数据
+    function updateStats(data) {
+      console.log('Updating stats:', data);
+      
+      if (data) {
+        blockedCountElement.textContent = data.blockedCount;
+        timeSavedElement.textContent = data.timeSaved;
+      }
+    }
+
+    // 切换拦截状态
+    function toggleBlocking() {
+      console.log('Toggle button clicked, current state:', isActive);
+      
+      isActive = !isActive;
+      chrome.runtime.sendMessage({
+        type: 'toggleBlocking',
+        enabled: isActive
+      }, response => {
+        if (chrome.runtime.lastError) {
+          console.error('Toggle error:', chrome.runtime.lastError);
+          return;
+        }
+        
+        if (response && response.success) {
+          console.log('Toggle successful');
+          updateUI();
+        } else {
+          console.error('Toggle failed:', response);
+          // 恢复状态
+          isActive = !isActive;
+          updateUI();
+        }
+      });
+    }
+
+    // 初始化popup
+    function initialize() {
+      // 获取当前拦截状态
+      chrome.runtime.sendMessage({ type: 'getBlockingStatus' }, response => {
+        if (chrome.runtime.lastError) {
+          console.error('Error getting status:', chrome.runtime.lastError);
+          return;
+        }
+        
+        if (response && response.enabled !== undefined) {
+          console.log('Got initial status:', response.enabled);
+          isActive = response.enabled;
+          updateUI();
+        }
+      });
+
+      // 获取初始统计数据
+      chrome.runtime.sendMessage({ type: 'getStats' }, response => {
+        if (chrome.runtime.lastError) {
+          console.error('Error getting stats:', chrome.runtime.lastError);
+          return;
+        }
+        
+        if (response) {
+          console.log('Got initial stats:', response);
+          updateStats(response);
+        }
+      });
+    }
+
+    // 监听来自background的消息
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+      console.log('Popup received message:', message);
+      
+      switch (message.type) {
+        case 'blockingStatusUpdate':
+          isActive = message.enabled;
+          updateUI();
+          break;
+          
+        case 'statsUpdate':
+          updateStats(message.data);
+          break;
+      }
+    });
+
+    // 添加按钮点击事件监听器
+    toggleButton.addEventListener('click', toggleBlocking);
+
+    // 初始化popup
+    initialize();
+  </script>
+</body>
+</html> 

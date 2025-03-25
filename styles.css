@@ -1,0 +1,512 @@
+/* 隐藏常见广告元素 */
+[class*="ad-"],
+[class*="ads-"],
+[class*="advertisement"],
+[id*="ad-"],
+[id*="ads-"],
+[id*="google_ads"],
+iframe[src*="doubleclick.net"],
+iframe[src*="googlesyndication.com"],
+.adsbygoogle,
+[class*="banner"],
+[class*="sponsor"],
+[class*="promoted"],
+[class*="popup"],
+[class*="modal"],
+
+/* 百度广告（精确匹配，保留热搜） */
+div[cmatchid],
+div[data-tuiguang],
+.ec_tuiguang_pplink,     /* 推广链接 */
+.ec_tuiguang_ppimlink,   /* 图片推广链接 */
+.ec-pc-container,        /* 广告容器 */
+.ec_ad_results,         /* 广告结果 */
+div[data-click*="rsv_bdr=0"],  /* 广告点击追踪 */
+.ad-block,              /* 广告块 */
+.ad-wrapper,           /* 广告包装器 */
+.ec-pl-container-new,  /* 新版广告容器 */
+#content_right > div:not([class]):not([id]), /* 右侧无类名广告 */
+div[style*="visibility:visible"] > div[data-placeid], /* 浮动广告 */
+.ec-pc-holder,         /* PC端广告占位 */
+#results-sponsored,    /* 赞助结果 */
+
+/* 搜狗广告（精确匹配） */
+.sponsored,            /* 赞助内容 */
+.biz_sponsor,         /* 商业赞助 */
+.right-ad-box,        /* 右侧广告盒子 */
+#right_show_topAd,    /* 顶部广告 */
+#right_show_bottomAd, /* 底部广告 */
+
+/* 360搜索广告（精确匹配） */
+.res-mediav,          /* 广告结果 */
+.e-businessAd,        /* 商业广告 */
+.e-bussiness-line,    /* 商业分割线 */
+.res-mediav-right,    /* 右侧广告 */
+.award-ad-box,        /* 奖励广告盒子 */
+.lianmeng-ad,         /* 联盟广告 */
+
+/* 视频网站广告 */
+/* 优酷视频广告 */
+.h5-ext-layer,
+.youku-layer-wuliao,
+.yk-ad-container,
+.yk-ad,
+.ad-banner,
+.ad-player,
+.h5-ad-tips,
+.video-layer-adWrapper,
+.video-layer-shoppingguide,
+.ykad-container,
+#ykPlayer-adBox,
+.h5-layer-conatiner,          /* 新增：广告容器 */
+.youku-film-player > div[style*="z-index: 1000"], /* 新增：前置广告 */
+.youku-layer-logo,            /* 新增：logo广告 */
+div[class*="-ad-banner"],     /* 新增：通用广告横幅 */
+
+/* 爱奇艺视频广告 */
+.qy-player-vippay-popup,
+.qy-player-ad-container,
+.player-side-banner,
+.iqp-player-advert,
+#playerAd,
+#flashbox,
+.iqp-logo-box,
+.qy-player-side-btn,
+.cupid-public-time,
+#scrollTip,
+.iqp-player-videoad,         /* 新增：视频广告层 */
+.adflash,                    /* 新增：Flash广告 */
+.pw-video-ad,               /* 新增：前置广告 */
+.qy-player-ad,             /* 新增：播放器广告 */
+.qy-player-vip-popup,      /* 新增：VIP提示 */
+div[templatetype="common_ad"],/* 新增：通用广告模板 */
+.player-mnb[data-player-hook], /* 新增：播放器广告钩子 */
+
+/* 腾讯视频广告 */
+.txp_ad,
+.txp_ad_link,
+.txp_ad_inner,
+.txp-watermark,
+.txp-watermark-action,
+.mod_ad,
+.player_bg_ad,
+.tenvideo_player_overlay,
+#player-advertising,
+.tvp-player-ad,
+.txp_ad_container,          /* 新增：广告容器 */
+.txp-ui-ad,                /* 新增：UI广告 */
+.txp-ads-control,          /* 新增：广告控制层 */
+.txp-ads-banner,          /* 新增：广告横幅 */
+.txp-ads-countdown,       /* 新增：广告倒计时 */
+div[data-role="adcontainer"], /* 新增：广告容器角色 */
+.player-mask[data-role="adMask"], /* 新增：广告遮罩 */
+
+/* 哔哩哔哩广告 */
+.bilibili-player-video-ad,  /* 新增：视频广告 */
+.bilibili-player-promote,   /* 新增：推广广告 */
+.bilibili-player-video-popup, /* 新增：弹出广告 */
+.bilibili-player-video-top, /* 新增：顶部广告 */
+.player-wrapper > div[style*="z-index: 1000"], /* 新增：前置广告 */
+.ad-report,                /* 新增：广告报告 */
+#slide_ad,                /* 新增：滑动广告 */
+.video-card-ad,           /* 新增：视频卡片广告 */
+.bili-video-card-ad,     /* 新增：视频广告卡片 */
+
+/* 通用视频广告选择器 */
+[class*="player-ad"],
+[class*="player_ad"],
+[class*="video-ad"],
+[class*="video_ad"],
+[class*="pre-ad"],
+[class*="pre_ad"],
+[class*="preroll"],
+[class*="midroll"],
+[class*="postroll"],
+[id*="player-ad"],
+[id*="player_ad"],
+[id*="video-ad"],
+[id*="video_ad"],
+[id*="pre-ad"],
+[id*="pre_ad"],
+video::-webkit-media-text-track-container,
+.video-ads,
+.video-ads-container,
+.video-player-ad-layer,
+.video-ad-overlay,
+.video-ad-module,
+.pre-ad-layer,
+.post-ad-layer,
+/* 新增通用视频广告选择器 */
+[class*="adv-player"],      /* 广告播放器 */
+[class*="player-adv"],      /* 播放器广告 */
+[class*="player-overlay"],  /* 播放器遮罩 */
+[class*="ad-wrapper"],      /* 广告包装 */
+[class*="ad-layer"],        /* 广告层 */
+[class*="ad-text"],         /* 广告文本 */
+[class*="ad-tips"],         /* 广告提示 */
+[class*="ad-banner"],       /* 广告横幅 */
+[class*="ad-mark"],         /* 广告标记 */
+[class*="ad-poster"],       /* 广告海报 */
+[class*="ad-slot"],         /* 广告槽 */
+[class*="ad-countdown"],    /* 广告倒计时 */
+[class*="-advert-"],        /* 广告元素 */
+[id*="adContent"],          /* 广告内容 */
+[data-ad-type],            /* 广告类型 */
+[data-adtype],             /* 广告类型 */
+[data-ad-status],          /* 广告状态 */
+div[style*="position: fixed"][style*="z-index: 999999"], /* 固定定位高层级元素 */
+iframe[src*="adsrc"],      /* 广告iframe */
+iframe[src*="adplay"],     /* 广告播放iframe */
+iframe[src*="ad.html"],    /* 广告HTML */
+video[src*="advertis"],    /* 广告视频源 */
+video[src*="_ad."],        /* 广告视频文件 */
+a[href*="adclick"],        /* 广告点击链接 */
+a[href*="ad_click"],       /* 广告点击链接 */
+div[class*="commercials"], /* 商业广告 */
+div[id*="commercials"] {   /* 商业广告ID */
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
+/* 广告拦截器样式 */
+.ad-blocked {
+  display: none !important;
+}
+
+/* 视频广告容器样式 */
+.video-ad-container,
+.video-ads,
+.ad-container,
+.advertisement-container {
+  display: none !important;
+}
+
+/* 搜索引擎广告样式 */
+.search-ad,
+.sponsored-result,
+.promoted-content {
+  display: none !important;
+}
+
+/* 通用广告样式 */
+[class*="ad-"],
+[class*="advertisement"],
+[class*="sponsored"],
+[class*="promoted"],
+[id*="ad-"],
+[id*="advertisement"],
+[id*="sponsored"],
+[id*="promoted"] {
+  display: none !important;
+}
+
+/* 视频网站特定样式 */
+/* 优酷 */
+.youku-ad,
+.youku-video-ad {
+  display: none !important;
+}
+
+/* 爱奇艺 */
+.iqiyi-ad,
+.iqiyi-video-ad {
+  display: none !important;
+}
+
+/* 腾讯视频 */
+.tencent-video-ad,
+.tencent-ad {
+  display: none !important;
+}
+
+/* 哔哩哔哩 */
+.bilibili-ad,
+.bilibili-video-ad {
+  display: none !important;
+}
+
+/* 百度搜索 */
+.baidu-ad,
+.baidu-sponsored {
+  display: none !important;
+}
+
+/* 弹窗广告 */
+.popup-ad,
+.modal-ad,
+.overlay-ad {
+  display: none !important;
+}
+
+/* 悬浮广告 */
+.floating-ad,
+.fixed-ad {
+  display: none !important;
+}
+
+/* 视频前置广告 */
+.pre-roll-ad,
+.video-preroll {
+  display: none !important;
+}
+
+/* 视频中间广告 */
+.mid-roll-ad,
+.video-midroll {
+  display: none !important;
+}
+
+/* 视频后置广告 */
+.post-roll-ad,
+.video-postroll {
+  display: none !important;
+}
+
+/* 广告占位符 */
+.ad-placeholder,
+.ad-slot {
+  display: none !important;
+}
+
+/* 广告容器 */
+.ad-wrapper,
+.ad-container,
+.ad-frame {
+  display: none !important;
+}
+
+/* 广告链接 */
+.ad-link,
+.sponsored-link {
+  display: none !important;
+}
+
+/* 广告图片 */
+.ad-image,
+.sponsored-image {
+  display: none !important;
+}
+
+/* 广告文字 */
+.ad-text,
+.sponsored-text {
+  display: none !important;
+}
+
+/* 广告视频 */
+.ad-video,
+.sponsored-video {
+  display: none !important;
+}
+
+/* 广告横幅 */
+.ad-banner,
+.ad-header,
+.ad-footer {
+  display: none !important;
+}
+
+/* 广告侧边栏 */
+.ad-sidebar,
+.sponsored-sidebar {
+  display: none !important;
+}
+
+/* 广告推荐 */
+.ad-recommendation,
+.sponsored-recommendation {
+  display: none !important;
+}
+
+/* 广告列表 */
+.ad-list,
+.sponsored-list {
+  display: none !important;
+}
+
+/* 广告网格 */
+.ad-grid,
+.sponsored-grid {
+  display: none !important;
+}
+
+/* 广告轮播 */
+.ad-carousel,
+.sponsored-carousel {
+  display: none !important;
+}
+
+/* 广告标签 */
+.ad-label,
+.sponsored-label {
+  display: none !important;
+}
+
+/* 广告按钮 */
+.ad-button,
+.sponsored-button {
+  display: none !important;
+}
+
+/* 广告关闭按钮 */
+.ad-close,
+.ad-skip {
+  display: none !important;
+}
+
+/* 广告加载动画 */
+.ad-loading,
+.ad-spinner {
+  display: none !important;
+}
+
+/* 广告错误提示 */
+.ad-error,
+.ad-failed {
+  display: none !important;
+}
+
+/* 广告统计 */
+.ad-stats,
+.ad-metrics {
+  display: none !important;
+}
+
+/* 广告调试 */
+.ad-debug,
+.ad-test {
+  display: none !important;
+}
+
+/* 广告测试 */
+.ad-testing,
+.ad-preview {
+  display: none !important;
+}
+
+/* 广告占位 */
+.ad-placeholder,
+.ad-slot {
+  display: none !important;
+}
+
+/* 广告容器 */
+.ad-wrapper,
+.ad-container {
+  display: none !important;
+}
+
+/* 广告链接 */
+.ad-link,
+.sponsored-link {
+  display: none !important;
+}
+
+/* 广告图片 */
+.ad-image,
+.sponsored-image {
+  display: none !important;
+}
+
+/* 广告文字 */
+.ad-text,
+.sponsored-text {
+  display: none !important;
+}
+
+/* 广告视频 */
+.ad-video,
+.sponsored-video {
+  display: none !important;
+}
+
+/* 广告横幅 */
+.ad-banner,
+.ad-header,
+.ad-footer {
+  display: none !important;
+}
+
+/* 广告侧边栏 */
+.ad-sidebar,
+.sponsored-sidebar {
+  display: none !important;
+}
+
+/* 广告推荐 */
+.ad-recommendation,
+.sponsored-recommendation {
+  display: none !important;
+}
+
+/* 广告列表 */
+.ad-list,
+.sponsored-list {
+  display: none !important;
+}
+
+/* 广告网格 */
+.ad-grid,
+.sponsored-grid {
+  display: none !important;
+}
+
+/* 广告轮播 */
+.ad-carousel,
+.sponsored-carousel {
+  display: none !important;
+}
+
+/* 广告标签 */
+.ad-label,
+.sponsored-label {
+  display: none !important;
+}
+
+/* 广告按钮 */
+.ad-button,
+.sponsored-button {
+  display: none !important;
+}
+
+/* 广告关闭按钮 */
+.ad-close,
+.ad-skip {
+  display: none !important;
+}
+
+/* 广告加载动画 */
+.ad-loading,
+.ad-spinner {
+  display: none !important;
+}
+
+/* 广告错误提示 */
+.ad-error,
+.ad-failed {
+  display: none !important;
+}
+
+/* 广告统计 */
+.ad-stats,
+.ad-metrics {
+  display: none !important;
+}
+
+/* 广告调试 */
+.ad-debug,
+.ad-test {
+  display: none !important;
+}
+
+/* 广告测试 */
+.ad-testing,
+.ad-preview {
+  display: none !important;
+} 

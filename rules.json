@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "||doubleclick.net",
+      "resourceTypes": [
+        "script",
+        "image",
+        "xmlhttprequest"
+      ],
+      "excludedInitiatorDomains": [
+        "*.youku.com",
+        "*.iqiyi.com",
+        "*.v.qq.com",
+        "*.bilibili.com",
+        "*.mgtv.com",
+        "*.pptv.com",
+        "*.sohu.com",
+        "*.le.com"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "||advertisement.com",
+      "resourceTypes": [
+        "script",
+        "image",
+        "xmlhttprequest"
+      ],
+      "excludedInitiatorDomains": [
+        "*.youku.com",
+        "*.iqiyi.com",
+        "*.v.qq.com",
+        "*.bilibili.com",
+        "*.mgtv.com",
+        "*.pptv.com",
+        "*.sohu.com",
+        "*.le.com"
+      ]
+    }
+  }
+] 
